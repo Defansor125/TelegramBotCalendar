@@ -1,0 +1,16 @@
+client_secret.json
+
+.env
+.env.*           # .env.local, .env.prod и т.п.
+credentials.json
+config.py        # если хранит TOKEN/ключи
+*.pem
+*.p12
+
+__pycache__/
+*.pyc
+.venv/
+.envrc
+
+.vscode/
+.idea/
