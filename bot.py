@@ -102,14 +102,14 @@ async def cancel(message: Message, state: FSMContext) -> None:
     await message.answer("Отменено.", reply_markup=main_menu_kb().as_markup())
 
 
-async def main():
-    dp.include_router(router)
-    await dp.start_polling(bot)
+# async def main():
+#     dp.include_router(router)
+#     await dp.start_polling(bot)
 
 
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        print("Exit")
+# if __name__ == "__main__":
+#     logging.basicConfig(level=logging.INFO)
+#     try:
+#         asyncio.run(main())
+#     except KeyboardInterrupt:
+#         print("Exit")

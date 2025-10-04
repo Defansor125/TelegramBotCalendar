@@ -1,4 +1,3 @@
-# app.py
 import asyncio
 import logging
 from aiohttp import web
