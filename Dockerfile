@@ -8,4 +8,4 @@ RUN python -m pip install --upgrade pip && \
     python -m pip install -r requirements.txt
 
 COPY . .
-CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8080}"]
+CMD ["sh", "-c", "gunicorn app:app -k aiohttp.GunicornWebWorker --bind 0.0.0.0:${PORT:-8080}"]

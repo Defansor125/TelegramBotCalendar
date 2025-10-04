@@ -5,3 +5,4 @@ gcsa==2.6.0
 google-auth==2.41.1
 python-dateutil==2.9.0.post0
 tzdata==2025.2
+gunicorn==22.0.0
