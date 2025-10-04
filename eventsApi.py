@@ -1,6 +1,6 @@
 # eventsApi.py
 import datetime as dt
-import os
+import os, json
 from zoneinfo import ZoneInfo
 from typing import Any, Iterable
 from dateutil import parser as dtparser  
@@ -9,13 +9,11 @@ from gcsa.google_calendar import GoogleCalendar
 from gcsa.event import Event
 
 SCOPES = ['https://www.googleapis.com/auth/calendar']
-CAL_ID = os.environ["CALENDAR_ID"] 
-G_SERVICE_JSON = os.environ["G_SERVICE_JSON"]
+CAL_ID = os.getenv("CALENDAR_ID")
+G_SERVICE_JSON = os.getenv("G_SERVICE_JSON")
 
-creds = service_account.Credentials.from_service_account_file(
-    G_SERVICE_JSON,
-    scopes=SCOPES,
-)
+creds_info = json.loads(G_SERVICE_JSON)
+creds = service_account.Credentials.from_service_account_info(creds_info, scopes=SCOPES)
 
 calendar = GoogleCalendar(CAL_ID, credentials=creds)
 

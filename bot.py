@@ -15,7 +15,7 @@ from aiogram.types import (Message, CallbackQuery, InlineKeyboardButton)
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 import eventsApi as cd  # твой модуль ниже
-TOKEN = os.environ["TOKEN"]
+TOKEN = os.getenv("TOKEN")
 
 
 
